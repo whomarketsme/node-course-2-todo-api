@@ -9,7 +9,7 @@ let db = {
   mlab: 'mongodb://whomarketsme:getitDone_34?mmt@ds123224.mlab.com:23224/todo-app'
 };
 
-mongoose.connect(db.localhost || db.mlab);
+mongoose.connect( process.env.PORT ? db.mlab : db.localhost);
 
 module.exports = {
   mongoose
